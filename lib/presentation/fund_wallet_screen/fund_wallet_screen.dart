@@ -1,0 +1,9 @@
+import 'controller/fund_wallet_controller.dart';import 'package:flutter/material.dart';import 'package:genescor/core/app_export.dart';import 'package:genescor/widgets/custom_elevated_button.dart';import 'package:genescor/widgets/custom_text_form_field.dart';class FundWalletScreen extends GetWidget<FundWalletController> {const FundWalletScreen({Key? key}) : super(key: key);
+
+@override Widget build(BuildContext context) { mediaQueryData = MediaQuery.of(context); return SafeArea(child: Scaffold(resizeToAvoidBottomInset: false, backgroundColor: theme.colorScheme.primaryContainer.withOpacity(1), body: Container(width: double.maxFinite, padding: getPadding(left: 20, top: 25, right: 20, bottom: 25), child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [CustomImageView(svgPath: ImageConstant.imgWalletpana2, height: getVerticalSize(109), width: getHorizontalSize(134), margin: getMargin(top: 6)), Padding(padding: getPadding(top: 28), child: Text("msg_add_money_to_your".tr, style: theme.textTheme.titleMedium)), Align(alignment: Alignment.centerLeft, child: Padding(padding: getPadding(top: 26), child: Text("lbl_amount2".tr, style: theme.textTheme.titleMedium))), CustomTextFormField(controller: controller.amountController, margin: getMargin(top: 9), hintText: "lbl_0_00".tr, hintStyle: CustomTextStyles.bodyMediumBluegray500_1, textInputAction: TextInputAction.done, borderDecoration: TextFormFieldStyleHelper.outlineIndigoTL7, filled: false)])), bottomNavigationBar: CustomElevatedButton(text: "lbl_continue".tr, margin: getMargin(left: 20, right: 20, bottom: 20), onTap: () {onTapContinue();}))); } 
+/// Navigates to the fundWalletOneScreen when the action is triggered.
+
+/// When the action is triggered, this function uses the [Get] package to
+/// push the named route for the fundWalletOneScreen.
+onTapContinue() { Get.toNamed(AppRoutes.fundWalletOneScreen, ); } 
+ }

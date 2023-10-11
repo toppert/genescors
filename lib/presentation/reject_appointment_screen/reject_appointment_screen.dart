@@ -1,0 +1,9 @@
+import 'controller/reject_appointment_controller.dart';import 'package:flutter/material.dart';import 'package:genescor/core/app_export.dart';import 'package:genescor/widgets/custom_elevated_button.dart';import 'package:genescor/widgets/custom_outlined_button.dart';class RejectAppointmentScreen extends GetWidget<RejectAppointmentController> {const RejectAppointmentScreen({Key? key}) : super(key: key);
+
+@override Widget build(BuildContext context) { mediaQueryData = MediaQuery.of(context); return SafeArea(child: Scaffold(backgroundColor: appTheme.whiteA70001, body: Container(width: double.maxFinite, padding: getPadding(left: 19, top: 20, right: 19, bottom: 20), child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [CustomElevatedButton(height: getVerticalSize(24), text: "msg_reject_appointment".tr, margin: getMargin(top: 5), rightIcon: Container(margin: getMargin(left: 30), child: CustomImageView(svgPath: ImageConstant.imgEvacloseoutlineBlack900)), buttonStyle: CustomButtonStyles.none, buttonTextStyle: CustomTextStyles.titleMediumSemiBold_3, onTap: () {onTapReject();}), Container(width: getHorizontalSize(280), margin: getMargin(left: 8, top: 36, right: 8), child: Text("msg_are_you_sure_you4".tr, maxLines: 2, overflow: TextOverflow.ellipsis, style: theme.textTheme.bodyLarge!.copyWith(height: 1.50))), CustomElevatedButton(height: getVerticalSize(43), text: "lbl_yes".tr, margin: getMargin(top: 29)), CustomOutlinedButton(text: "lbl_no".tr, margin: getMargin(top: 20))])))); } 
+/// Navigates to the appointmentsOneScreen when the action is triggered.
+
+/// When the action is triggered, this function uses the [Get] package to
+/// push the named route for the appointmentsOneScreen.
+onTapReject() { Get.toNamed(AppRoutes.appointmentsOneScreen, ); } 
+ }
